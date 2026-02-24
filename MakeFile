@@ -8,6 +8,6 @@ migratedown:
 	migrate -path sql/migrations -database "mysql://root:root@tcp(localhost:3306)/orders" -verbose down
 
 run:
-	go run cmd/server/main.go
+	go run ./cmd/server/main.go  ./cmd/server/wire_gen.go
 
 .PHONY: createmigration migrate migratedown run
