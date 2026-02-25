@@ -24,7 +24,7 @@ Projeto desenvolvido em Go que implementa um serviço de ordens com pelos canais
    ```
 2. Execute o docker-compose 
    ```bash
-  docker-compose up -d
+   docker-compose up -d
    ```
 3 Utilize os comando no MakeFile para criar o banco de dados 
     ```bash
