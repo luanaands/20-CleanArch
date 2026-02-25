@@ -27,8 +27,8 @@ Projeto desenvolvido em Go que implementa um serviço de ordens com pelos canais
    docker-compose up -d
    ```
 3 Utilize os comando no MakeFile para criar o banco de dados 
-    ```bash
-  createmigration migrate 
+  ```bash
+    createmigration migrate 
    ```
 4. Execute o servidor
      ```bash
