@@ -17,7 +17,8 @@ Projeto desenvolvido em Go que implementa um serviço de ordens com pelos canais
 
 ## 🏃 Como Executar 
 
-1. Instale as dependências
+1. Execute o comando: 
+
    ```bash
    docker compose up -d 
    ```
