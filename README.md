@@ -14,26 +14,14 @@ Projeto desenvolvido em Go que implementa um serviço de ordens com pelos canais
 ## Dependências e sugestões
 - Docker - Subir a infra
 - Evans - Se comunicar com o serviço de grpc
-- golang-migrate - Realizar as migrações necessárias 
 
-## 🏃 Como Executar o Servidor
+## 🏃 Como Executar 
 
 1. Instale as dependências
    ```bash
-   go mod tidy
+   docker compose up -d 
    ```
-2. Execute o docker-compose 
-   ```bash
-   docker-compose up -d
-   ```
-3 Utilize os comando no MakeFile para criar o banco de dados 
-  ```bash
-    createmigration migrate 
-   ```
-4. Execute o servidor
-     ```bash
-   go run main.go wire_gen.go
-     ```
+
 O servidor estará disponível em:
 -Rest - `http://localhost:8000`
 -Graphql - `http://localhost:8080/graphql`
