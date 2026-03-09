@@ -2,6 +2,7 @@ package webserver
 
 import (
 	"net/http"
+	"strings"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -26,12 +27,18 @@ func (s *WebServer) AddHandler(path string, handler http.HandlerFunc) {
 }
 
 // loop through the handlers and add them to the router
-// register middeleware logger
+// register middleware logger
 // start the server
-func (s *WebServer) Start() {
+func (s *WebServer) Start() error {
 	s.Router.Use(middleware.Logger)
 	for path, handler := range s.Handlers {
 		s.Router.Handle(path, handler)
 	}
-	http.ListenAndServe(s.WebServerPort, s.Router)
+
+	addr := s.WebServerPort
+	if !strings.Contains(addr, ":") {
+		addr = ":" + addr
+	}
+	// Ensure address has a port so ListenAndServe doesn't fail on values like "8000".
+	return http.ListenAndServe(addr, s.Router)
 }
